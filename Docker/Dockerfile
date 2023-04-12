@@ -1,10 +1,13 @@
 FROM jlesage/baseimage-gui:debian-11-v3.5.8
 
+# Docker image version is provided via build arg.
+ARG DOCKER_IMAGE_VERSION=
+
 # Metadata.
 LABEL \
   org.label-schema.name="MadreSteam" \
   org.label-schema.description="Docker container for playing Steam" \
-  # org.label-schema.version="${DOCKER_IMAGE_VERSION:-unknown}" \
+  org.label-schema.version="${DOCKER_IMAGE_VERSION:-unknown}" \
   org.label-schema.vcs-url="https://github.com/akrista/madrestam" \
   org.label-schema.schema-version="1.0"
 
@@ -14,6 +17,11 @@ ENV APP_NAME="MadreSteam" \
   XDG_CONFIG_HOME=/steam/xdg/config \
   XDG_DATA_HOME=/steam/xdg/data \
   XDG_RUNTIME_DIR=/tmp/run/user/app
+
+# Generate and install favicons.
+RUN \
+  APP_ICON_URL=https://raw.githubusercontent.com/jlesage/docker-templates/master/jlesage/images/jdownloader-2-icon.png && \
+  install_app_icon.sh "$APP_ICON_URL"
 
 RUN echo "========== Updating Packages ==========" && \
   set -x && \
@@ -72,3 +80,6 @@ RUN echo "========== Clean up ==========" && \
   rm -rf /var/lib/apt/lists/*
 
 COPY rootfs/ /
+
+# Define mountable directories.
+VOLUME ["/steam"]
