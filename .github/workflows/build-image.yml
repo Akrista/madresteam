@@ -11,7 +11,7 @@ with:
 registry: ghcr.io
 username: ${{ github.actor }}
 password: ${{ secrets.GH_TOKEN }}
-- name: Build the hello-docker Docker image
-run: |
-       docker build . -t ghcr.io/akrista/madresteam:latest
-       docker push ghcr.io/akrista/madresteam:latest
+- name: Build the MadreSteam Docker image
+run:
+docker build . -t ghcr.io/akrista/madresteam:latest
+docker push ghcr.io/akrista/madresteam:latest
