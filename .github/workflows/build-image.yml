@@ -1,17 +1,18 @@
 name: publish
-on: [push]
+on:
+  push:
 jobs:
-publish-docker-image:
-runs-on: ubuntu-latest
-steps:
-- uses: actions/checkout@v2
-- name: Login to GitHub Container Registry
-uses: docker/login-action@v1
-with:
-registry: ghcr.io
-username: ${{ github.actor }}
-password: ${{ secrets.GH_TOKEN }}
-- name: Build the MadreSteam Docker image
-run:
-docker build . -t ghcr.io/akrista/madresteam:latest
-docker push ghcr.io/akrista/madresteam:latest
+  publish-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GH_TOKEN }}
+      - name: Build the MadreSteam Docker image
+        run: |
+          docker build . -t ghcr.io/akrista/madresteam:latest
+            docker push ghcr.io/akrista/madresteam:latest
