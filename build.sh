@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t akrista/madresteam ./Docker
+docker build -t ghcr.io/akrista/madresteam:latest .
