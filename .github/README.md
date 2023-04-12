@@ -1,5 +1,7 @@
 # Docker Container for Steam
 
+![](../Docker_Original.svg)
+
 This container is a work in progress.
 
 It implements Steam running on Linux, inside a Docker Container.
@@ -41,16 +43,16 @@ You may need to run `modprobe uinput` on the docker host prior... See how you go
 
 ## Current Status
 
-* Steam launches, and I can log in and install games.
-* I have had success launching two native Linux titles:
-  * PixelJunk Monsters Ultimate
-  * PixelJunk Shooter
-* I have had moderate success with Undertale (native Linux)
-* I have had no success with Proton games, I think this is due to the fact that I'm not passing through a GPU to the container... I will test this further as time permits.
-* For Remote Play:
-  * Keyboard/Mouse input seems to work fine
-  * Gamepad input seems hit and miss
-  * Sound doesn't appear to be working (it has worked in the past...)
+- Steam launches, and I can log in and install games.
+- I have had success launching two native Linux titles:
+  - PixelJunk Monsters Ultimate
+  - PixelJunk Shooter
+- I have had moderate success with Undertale (native Linux)
+- I have had no success with Proton games, I think this is due to the fact that I'm not passing through a GPU to the container... I will test this further as time permits.
+- For Remote Play:
+  - Keyboard/Mouse input seems to work fine
+  - Gamepad input seems hit and miss
+  - Sound doesn't appear to be working (it has worked in the past...)
 
 ## Troubleshooting
 
@@ -66,6 +68,4 @@ I don't think I'm good enough to get this running perfectly on my own. :-)
 
 ## Screenshots
 
-* [PixelJunk Monsters via NoVNC](https://i.imgur.com/7FVqXm5.mp4)
-
-
+- [PixelJunk Monsters via NoVNC](https://i.imgur.com/7FVqXm5.mp4)

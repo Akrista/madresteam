@@ -20,7 +20,7 @@ ENV APP_NAME="MadreSteam" \
 
 # Generate and install favicons.
 RUN \
-  APP_ICON_URL=https://raw.githubusercontent.com/jlesage/docker-templates/master/jlesage/images/jdownloader-2-icon.png && \
+  APP_ICON_URL=https://raw.githubusercontent.com/Akrista/madresteam/master/Docker_Original.svg && \
   install_app_icon.sh "$APP_ICON_URL"
 
 RUN echo "========== Updating Packages ==========" && \
