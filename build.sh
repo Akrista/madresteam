@@ -1,4 +1,2 @@
 #!/bin/bash
-
-docker build -t mikenye/steam .
-
+docker build -t akrista/madresteam ./Docker
